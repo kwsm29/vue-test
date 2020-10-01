@@ -1,5 +1,7 @@
 <template>
-    <p>トップページです</p>
+    <main class="l-main">
+      <p>トップページです</p>
+    </main>
 </template>
 
 <style scoped>

@@ -1,5 +1,7 @@
 <template>
-    <p>page2です</p>
+    <main class="l-main">
+      <p>page2です</p>
+    </main>
 </template>
 
 <style>
