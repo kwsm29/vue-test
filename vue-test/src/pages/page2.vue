@@ -1,6 +1,6 @@
 <template>
     <main class="l-main">
-      <p>page2です</p>
+      <p>page2</p>
     </main>
 </template>
 
@@ -9,6 +9,7 @@
 </style>
 
 <script>
+
 export default {
 　　data() {
       return {

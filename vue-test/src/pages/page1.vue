@@ -3,8 +3,9 @@
       <div class="l-container">
         <ul class="p-list">
           <li v-for="item in animal" :key="item.id" class="c-card">
-            <figure><img :src="item.img" alt=""></figure>
-            {{ item.name }}
+            <p class="name">{{ item.name }}</p>
+            <figure><img :src="require('../assets/images/' + 
+             item.img )" alt=""></figure>
           </li>
         </ul>
         <ul class="p-list">
@@ -20,19 +21,14 @@
 </style>
 
 <script defer>
-import Vue from 'vue'
-//コンポーネントのscriptは eport defaultde で囲む
+import animal from '../assets/json/animal.json'
+
+//コンポーネントのscriptは eport defaultde で囲
 export default {
 　　data() {
       return {
           title: 'toop',
-          animal: [
-            {name: 'いぬ',
-            img : require('@/assets/images/dog.png')}
-            // 'ねこ',
-            // 'うさぎ',
-            // 'ぞう',
-          ],
+          animal: animal,
           fruits: [
             'りんご',
             'みかん',

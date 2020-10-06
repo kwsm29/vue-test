@@ -15,8 +15,11 @@
     "watch": "webpack --watch"
   },
   "dependencies": {
+    "axios": "^0.20.0",
+    "es6-promise": "^4.2.8",
     "node-sass": "^4.14.1",
     "vue": "^2.5.2",
+    "vue-axios": "^3.0.1",
     "vue-head": "^2.2.0",
     "vue-router": "^3.0.1"
   },
