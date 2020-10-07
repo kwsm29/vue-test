@@ -19,6 +19,9 @@ export default {
         { name: 'viewport', content: 'width=device-width,initial-scale=1.0,user-scalable=no' },
         { charset: 'utf-8' },
         { property: 'og:type', content: 'website' }
+    ],
+    script: [
+      {type: "text/javascript",src:"https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/ja.js"}
     ]
   }
 }
