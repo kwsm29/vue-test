@@ -10,6 +10,10 @@
                   </div>
                 </div>
                 <div class="group">
+                  <p class="item">出身地：</p>
+                  <p>{{ form.address }}</p>
+                </div>
+                <div class="group">
                   <p class="item">電話番号：</p>
                   <p>{{ form.tel }}</p>
                 </div>

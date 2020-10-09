@@ -4,7 +4,11 @@ import Vue from 'vue'
 import VueHead from "vue-head"
 import App from './App'
 import router from './router'
+import Vuelidate from "vuelidate";
+Vue.use(Vuelidate);
+
 import "./assets/sass/style.scss"
+
 
 Vue.config.productionTip = false
 

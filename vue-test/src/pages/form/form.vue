@@ -1,31 +1,44 @@
 <template>
     <main class="l-main">
       <div class="l-container">
-        <form class="p-form" v-on:submit="$router.push('./confirm')">
+        <form class="p-form" @submit.prevent="submitForm" >
           <div class="group">
-            <label for="name">名前：</label>
+            <label for="name" class="required">名前</label>
             <div class="form-row">
               <div class="col">
-                <input type="text" v-model="form.familyName" autocomplete="family-name" placeholder="名字" required>
-                <small v-bind:class="{'is-hide':validation.familyName}">{{ errorMessage.familyName }}</small>
+                <input type="name" autocomplete="family-name" v-model="form.familyName" placeholder="姓" @blur="$v.form.familyName.$touch()" :class="{invalid: $v.form.familyName.$error}" class="formItem">
+                <small v-if="$v.form.familyName.$error">名字を入力してください</small>
               </div>
               <div class="col">
-                <input type="text" v-model="form.givenName" autocomplete="given-name" placeholder="名前">
-                <small v-bind:class="{'is-hide':validation.givenName}">{{ errorMessage.givenName }}</small>
+                <input type="text" autocomplete="given-name" v-model="form.givenName" placeholder="名" @blur="$v.form.givenName.$touch()" :class="{invalid: $v.form.givenName.$error}" class="formItem">
+                <small v-if="$v.form.givenName.$error">名前を入力してください</small>
               </div>
             </div>
           </div>
           <div class="group">
-            <label for="name">電話番号：</label>
-            <input type="tel" v-model="form.tel"  autocomplete="tel" placeholder="電話番号">
-            <small v-bind:class="{'is-hide':validation.tel}">{{ errorMessage.tel }}</small>
+              <label for="address">出身地</label>
+                <select name="address" v-model="form.address">
+                    <option disabled selected value>選択してください</option>
+                    <option value="東京">東京</option>
+                    <option value="青森">青森</option>
+                    <option value="埼玉">埼玉</option>
+                    <option value="神奈川">神奈川</option>
+                </select>
           </div>
           <div class="group">
-            <label for="name">メールアドレス：</label>
-            <input type="email" v-model="form.email"  autocomplete="email" placeholder="メールアドレス" autocorrect="off" autocapitalize="off">
-            <small v-bind:class="{'is-hide':validation.email}">{{ errorMessage.email }}</small>
+            <label for="name" class="required">電話番号</label>
+            <input type="tel" v-model="form.tel"  autocomplete="tel" placeholder="電話番号" @blur="$v.form.tel.$touch()" :class="{invalid: $v.form.tel.$error}" class="formItem">
+            <small v-if="$v.form.tel.$error">電話番号を入力してください</small>
           </div>
-          <button type="submit" v-bind:disabled="!isValid" class="submitBtn">確認</button>
+          <div class="group">
+            <label for="name" class="required">メールアドレス</label>
+            <input type="email" v-model="form.email"  autocomplete="email" placeholder="メールアドレス" autocorrect="off" autocapitalize="off" @blur="$v.form.email.$touch()" :class="{invalid: $v.form.email.$error}" class="formItem">
+            <div v-if="$v.form.email.$error">
+                <small v-if="!$v.form.email.required">メールドレスが入力されていません。</small>
+                <small v-if="!$v.form.email.email">メールアドレスの形式が正しくありません。</small>
+            </div>
+          </div>
+          <button type="submit" class="submitBtn">確認</button>
         </form>
       </div>
     </main>
@@ -36,53 +49,34 @@
 </style>
 
 <script>
+
+import { required ,email } from 'vuelidate/lib/validators'
+
 export default {
 　　data() {
       return {
-          title: 'about',
-          errorMessage: {
-            familyName: '名字を入力してください',
-            givenName: '名前を入力してください',
-            tel: '電話番号を入力してください',
-            email: 'メールアドレスを入力してください',
-          }
+          title: 'contact',
       }
   },
-  computed: {
-    validation() {
-      const form = this.form
-        return {
-          familyName : !!form.familyName,
-          givenName : !!form.givenName,
-          tel : (() => {
-            if(!!form.tel) {
-              form.tel.replace(/[━.*‐.*―.*－.*\-.*ー.*\-]/gi,'')
-              if (!form.tel.match(/^(0[5-9]0[0-9]{8}|0[1-9][1-9][0-9]{7})$/)) {
-                return false
-              }
-              return true
-            } else {
-              return false
-            }
-          })(),
-          email : (() => {
-            if(!!form.email) {
-              if (!form.email.match(/^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/)) {
-                return false
-              }
-              return true
-            } else {
-              return false
-            }
-          })()
-        }
+  validations: {
+      form: {
+        familyName: {required},
+        givenName: {required},
+        tel: {required},
+        email: {required,email},
       },
-      isValid() {
-        var validation = this.validation
-        return Object.keys(validation).every(function (key) {
-          return validation[key]
-      })
-    }
+  },
+  methods: {
+    submitForm(){
+        this.$v.$touch();
+        if(this.$v.$invalid){
+            console.log(this.$v.$invalid)
+            console.log('バリデーションエラー');
+        }else{
+            console.log('submit');
+            this.$router.push('./confirm')
+        }
+    },
   },
     props: {
         form: Object

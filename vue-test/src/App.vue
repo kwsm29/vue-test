@@ -20,9 +20,9 @@ export default {
         { charset: 'utf-8' },
         { property: 'og:type', content: 'website' }
     ],
-    script: [
-      {type: "text/javascript",src:"https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/ja.js"}
-    ]
+    // script: [
+    //   {type: "text/javascript",src:"https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/ja.js"}
+    // ]
   }
 }
 
@@ -31,7 +31,7 @@ Vue.use(VueHead)
 </script>
 
 <style>
-@import "./assets/css/reset.css";
+@import "./assets/css/reset.min.css";
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

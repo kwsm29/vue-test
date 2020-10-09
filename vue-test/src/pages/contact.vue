@@ -18,6 +18,7 @@
 </style>
 
 <script>
+
 export default {
 　　data() {
       return {
@@ -25,6 +26,7 @@ export default {
           form: {
             familyName:'',
             givenName:'',
+            adress:'',
             tel:'',
             email:'',
           },
@@ -43,6 +45,10 @@ export default {
         { name: 'description', content: 'お問い合わせページです' }
       ]
     },
+    script: [
+      {type: "text/javascript",src:"https://cdn.jsdelivr.net/npm/vuelidate@0.7.4/dist/validators.min.js"},
+      {type: "text/javascript",src:"https://cdn.jsdelivr.net/npm/vuelidate@0.7.4/dist/vuelidate.min.js"}
+    ]
   }
 }
 </script>

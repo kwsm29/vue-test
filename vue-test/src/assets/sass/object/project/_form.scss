@@ -9,6 +9,12 @@
         display: block;
         text-align: left;
         margin-bottom: 5px;
+        &.required {
+            &:after {
+                content: "※";
+                color: #f92360;
+            }
+        }
     }
     input {
         border: 1px solid #585858;
@@ -17,16 +23,20 @@
         min-width: 300px;
         width: 100%;
     }
+    select {
+        padding: 10px;
+    }
     small {
         @include fz(12);
         color: #f92360;
-        &.is-hide {
-            visibility: hidden;
-        }
+        // visibility: hidden;
+        // &.invalid {
+        //     visibility: visible;
+        // }
     }
-    button[disabled="disabled"] {
-        background: #d5d5d5;
-    }
+    // button[disabled="disabled"] {
+    //     background: #d5d5d5;
+    // }
     .group {
         margin-bottom: 30px;
         .item {
@@ -42,6 +52,10 @@
             }
         }
     }
+    .formItem.invalid {
+        border: 1px solid #f92360;
+        background: #ffdbe5;
+    }
     .btnBox {
         display: flex;
     }
@@ -53,5 +67,7 @@
         border-radius: 10px;
         margin: 0 auto;
         display: block;
+        border: none;
+        outline: none;
     }
 }
