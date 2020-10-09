@@ -4,7 +4,7 @@
       <nav>
         <li><router-link to="/" class="top">TOP</router-link></li>
         <li><router-link to="./page2">ABOUT</router-link></li>
-        <li><router-link to="./page3">CONTACT</router-link></li>
+        <li><router-link to="./contact">CONTACT</router-link></li>
       </nav>
     </header>
 </template>

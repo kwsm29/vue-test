@@ -1,9 +1,12 @@
 @import "./foundation/base.scss";
+@import "./foundation/mixins.scss";
+@import "./foundation/variables.scss";
 @import "./layout/header.scss";
 @import "./layout/main.scss";
 @import "./layout/container.scss";
 @import "./object/compornent/card.scss";
 @import "./object/compornent/search.scss";
 @import "./object/project/list.scss";
+@import "./object/project/form.scss";
 
 // @import "./layout/**"

@@ -1,4 +1,7 @@
 .l-container {
     width: 1000px;
     margin: 0 auto;
+    @include respond-to(sm,xs) {
+        width: 100%;
+    }
 }

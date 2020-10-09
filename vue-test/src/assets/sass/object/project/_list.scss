@@ -1,3 +1,6 @@
 .p-list {
     display: flex;
+    @include respond-to(xs) {
+        flex-wrap: wrap;
+    }
 }

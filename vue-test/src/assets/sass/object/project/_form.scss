@@ -1,0 +1,57 @@
+.p-form {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    border: 1px solid #585858;
+    padding: 50px;
+    label {
+        width: 100%;
+        display: block;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+    input {
+        border: 1px solid #585858;
+        border-radius: 10px;
+        padding: 10px;
+        min-width: 300px;
+        width: 100%;
+    }
+    small {
+        @include fz(12);
+        color: #f92360;
+        &.is-hide {
+            visibility: hidden;
+        }
+    }
+    button[disabled="disabled"] {
+        background: #d5d5d5;
+    }
+    .group {
+        margin-bottom: 30px;
+        .item {
+            margin-bottom: 5px;
+        }
+    }
+    .form-row {
+        display: flex;
+        .col {
+            width: 48%;
+            &:not(:last-child) {
+                margin-right: 15px;
+            }
+        }
+    }
+    .btnBox {
+        display: flex;
+    }
+    .submitBtn {
+        width: 300px;
+        background: #cae9ff;
+        text-align: center;
+        padding: 15px 10px;
+        border-radius: 10px;
+        margin: 0 auto;
+        display: block;
+    }
+}

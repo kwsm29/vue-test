@@ -6,5 +6,5 @@ module.exports = {
       }
     }
   },
-  productionSourceMap: true //これはmapファイルの生成有無。作りたくない場合はfalseでOK。
+  productionSourceMap: true, //これはmapファイルの生成有無。作りたくない場合はfalseでOK。
 };

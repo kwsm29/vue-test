@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+// color
+$baseColor: #fff;
+$mainColor: #9f806b;
+$accentColor: #ba9a6b;
+$basefont_color:#000000;
+// $baselink_color:#39342a;
+
+// font-family
+$font_base:'Noto Serif JP',serif;
+$font_gothic:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+$font_accent:'Cormorant',serif;
+
+//path
+$imgpath_access: "/keisei/kaihatu/mansion/sg-hachioji/access/images";
+$imgpath_common: "/keisei/kaihatu/mansion/sg-hachioji/common/images";
+$imgpath_concept: "/keisei/kaihatu/mansion/sg-hachioji/concept/images";
+$imgpath_equipment: "/keisei/kaihatu/mansion/sg-hachioji/equipment/images";
+$imgpath_location: "/keisei/kaihatu/mansion/sg-hachioji/location/images";
+$imgpath_equipment: "/keisei/kaihatu/mansion/sg-hachioji/equipment/images";
+$imgpath_map: "/keisei/kaihatu/mansion/sg-hachioji/map/images";
+$imgpath_plan: "/keisei/kaihatu/mansion/sg-hachioji/plan/images";
+$imgpath_top: "/keisei/kaihatu/mansion/sg-hachioji/top/images";
+$imgpath_modelroom: "/keisei/kaihatu/mansion/sg-hachioji/modelroom/images";
+$imgpath_southview: "/keisei/kaihatu/mansion/sg-hachioji/southview/images";
+
+//width
+$contW : 1280px;
